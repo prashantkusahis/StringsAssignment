@@ -1,0 +1,109 @@
+1:What is a mutable string in java,explain with an example.
+Answer: In Java, strings are typically considered immutable, which means that once a string is created, its content cannot be changed. However, a mutable string in java is such a string which is cretaed using the StringBuffer or StringBuilder class and they can be modified once they are created unlike those strings which are created using the String class. 
+	When we try to modify a string created using the String claass it creates a new string and the reference variable of the String type points to the the new string, insted of changing the string at the prior location hence they are called immutable strings. whereas when we try to modify a string created using the StrinBuffer class or the StrungBuilder class the reference variable point to the same srtring with a modified string value stored at that location.
+
+	Example: StringBuilder sb=new StringBuilder("Hello");
+				This creates a new string whose reference is stored in sb.
+			sb.append(" World");
+				This adds the " World" string at he end of the "Hello" string.
+			sb.replace(6,10,"Java");
+				This replaces the Substring "World" with the substring "Java".
+ And all this happens at the same memory location as we can see there is no new assignment.And this is called mutation of string.
+
+2: Program to reverse a String :
+Answer: 
+import java.util.Scanner;
+public class Solution1 {
+    public static String revStr(String str){
+        //#1: Java program to reverse a string without using the inbuilt method.
+        if (str == null || str.length() <= 1) {
+            return str;
+        }
+        char[] arr=new char[str.length()];
+        for(int i=0;i<str.length();i++){
+            arr[i]=str.charAt(str.length()-1-i);
+            
+        }
+        String s=new String(arr);
+        return s;
+    }
+
+    public static void main(String[] args) {
+        Scanner sc=new Scanner(System.in);
+        System.out.print("Enter a string to reverse: ");
+        String str=sc.nextLine();
+        System.out.println("\nReversed string is : "+revStr(str));
+
+        sc.close();
+    }
+}
+
+3: Program to reverse a string preserving the position.
+Answer:
+
+import java.util.Scanner;
+
+public class reverseStringPreserve {
+
+    public static void revStrPreserve(String str) {
+        StringBuilder sb = new StringBuilder();
+        int count = 0;
+
+        for (int i = 0; i < str.length(); i++) {
+            if (str.charAt(i) == ' ' || str.charAt(i) == ',') {
+                sb.append(revStr(str.substring(count, i)));
+                sb.append(str.charAt(i));
+                count = i + 1; // Update the count for the next word
+            }
+        }
+        
+        // Append the last word (if any)
+        if (count < str.length()) {
+            sb.append(revStr(str.substring(count)));
+        }
+
+        System.out.println("The new string is " + sb);
+    }
+
+    public static String revStr(String str) {
+        StringBuilder reversed = new StringBuilder(str);
+        return reversed.reverse().toString();
+    }
+
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        System.out.print("Enter a string to reverse: ");
+        String str = sc.nextLine();
+        revStrPreserve(str);
+        sc.close();
+    }
+}
+
+4:WAP to sort a String Alphabtically
+Answer:
+import java.util.Scanner;
+public class sortCharacters {
+
+    public static void sortChar(String str){
+        char[] chararr=str.toCharArray();
+        // char[] arr = new char[str.length()];
+        for(int i=0;i<chararr.length;i++){
+            for(int j=i;j<chararr.length;j++){
+                if(chararr[i]>chararr[j]){
+                    char temp = chararr[i];
+                    chararr[i] = chararr[j];
+                    chararr[j]=temp;
+                }
+            }
+        }
+        System.out.println("Sorted characters are: "+new String(chararr));
+    }
+    public static void main(String[] args) {
+
+        Scanner sc=new Scanner(System.in);
+        System.out.print("Enter a String to sort: ");
+        String str= sc.nextLine();
+        sortChar(str);
+        sc.close();
+    }
+}

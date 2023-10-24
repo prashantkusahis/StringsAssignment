@@ -1,0 +1,32 @@
+1: What is a String in JAVA?
+Answer: In Java, String is a sequence of characters or collection of characters enclosed within double quotes(" ").	
+	Example: "Prashant Sahis" or "PWSkills" or "Ineuron@1725" all these are examples of strings in java.
+
+2:Types of Strings in java are?
+Answer: In java there are two types of strings:
+		i)Mutable Strings: Strings which can be modified after being created.
+		ii)Immutable Strings: Strings which cannot be modified once created.
+
+3:In how many ways can we create string object in java?
+Answer: In java string objects can be created by following ways:-
+		i) Using string literal: We can create Strings in java by directly assigning string literal to a variable.
+			Example: String str= "This is a sample String";
+		ii)By using new keyword: We can also create a new string in java by the use of the new keyword. This creates a new string object everytime.
+			Example: String str= new String("This is a sample string");
+		iii)By using a character array: We can cretae a new string in java by first creating a character array and then passing this array to the constructor while creating a string with the use of the new keyword.
+			Example:char arr[] ={'H', 'e', 'l', 'l', 'o', ' ', 'W', 'o', 'r', 'l', 'd'};
+				       String str = new String(arr); //output: Hello World
+		iv)Using the StringBuffer or the StringBuilder class:We can create new string objects by the use of the StringBuffer or StringBuilder class just like we created a new string using the String class in the point (ii) by the help of new keyword.
+			Example: StringBuffer sb= new StringBuffer("This is a sample string");
+					StringBuilder sb= new StringBuilder("This is a sample string");
+		v)By string concatenation: We can create new string by concatenating additional string literals to existing strings.
+			Example: "Hello World" +"This is a sample string";
+
+4:What is a String constant pool?
+Answer: The String Constant Pool, often simply referred to as the "string pool," is a special area in the memory where Java stores string literals. It's a part of the Java heap memory, which is the runtime data area used for dynamic memory allocation.
+
+5:What do you mean by the term mutable and immutable objects?
+Answer: Mutable objects are those objects which can be modified or transformed by doing certain operations on them, like the strings created by the StringBuffer class or the SringBuilder class.Whereas Immutable objects are those objects which can't be transformed once created,like the strings created by the use of String class.
+ 
+6:Where exactly is the string constant pool located in the memory?
+Answer: The string constant pool is located in the heap memory. It is a special area within the heap memory.

@@ -1,0 +1,95 @@
+1:Write a simple String program to take input from user.
+Answer: 
+import java.util.Scanner;
+public class InputString {
+    public static void main(String[] args) {
+
+        Scanner sc=new Scanner(System.in);
+        System.out.println("Enter a string: ");
+        String str=sc.nextLine();
+        System.out.println("the entered String is : "+str);
+
+        sc.close();
+    }
+}
+
+2: How do you concatenate two Strings in java ? Give an example.
+Answer: We can concatenate two strings by following ways:
+	a) Using the '+' operator:
+		We can concatenate 2 strings using the '+' operator as given in the example below-
+		String s = "Hello";
+			s= "Hello" +", World!";
+		The resulring string will be "Hello,World!'.
+	b)Using the concat() method:
+		We can concatenate 2 strings using the concat() method as given in the example below-
+		String s = "Hello";
+			s=s.concat(", World!");
+		The resulring string will be "Hello,World!'.
+	c)Using the append() method:
+		In case of Strings created using the StringBuffer or the StringBuilder class we can concatenate 2 strings using the append() method as given in the example below-
+		StringBuilder sb = "Hello";
+			sb.append(", World!");
+		The resulring string will be "Hello,World!'.
+
+3:How do we you find the length of a string in java? Explain with an example.
+Answer: In java we make the use of .length() method to find the length of a string.
+	Example: String str="Hello, World!";
+			int length =str.length();
+			System.out.println("the length of the string is : " +length);
+			//Output : 13
+
+4: How do you compare 2 strings in java?Give an example.
+Answer: We can compare 2 strings by following ways:
+	a) equals() method:
+		To comapre two strings in case sensitive manner we make use of equals() method.
+		Example: String s1= "Hello";
+				String s2= "Hello";
+				Sring s3="hello";
+				Here, s1.equals(s2) will give true as response as they are equal but s1equlas(s3) will give false as response as they differ by the 'H' & 'h'.
+
+	b) equalsIgnoreCase() method:
+		To comapre two strings regardless of case ,we make use of equalsIgnoreCase() method.
+		Example: String s1= "Hello";
+				String s2= "Hello";
+				Sring s3="hello";
+				Here, s1.equalsIgnoreCase(s2) will give true as response as they are equal and s1.equalsIgnoreCase(s3) will also give true as response as it ignores athe upper case 'H' & lowercase 'h' and treats them as same.
+
+5:Write a program to find the length of the string "refrigerator".
+Answer: 
+
+public class lengthRefrigerator {
+    public static void main(String[] args) {
+        String str= "refrigerator";
+        System.out.println("Length of the string is: "+str.length());
+    }
+}
+6:Write a proram to check if letter 'e' is present in the word "Umberella".
+Answer:
+
+public class eInUmberella {
+    public static void main(String[] args) {
+        String str="Umberella";
+        for(int i=0;i<str.length();i++){
+            if(str.charAt(i)=='e'){
+                System.out.println("The letter 'e' is present in the word Umberella at index : "+i);
+            }
+        }
+    }
+}
+
+7: Write a program to delete all consonants from the string  "Hello, have a good day".
+Answer:
+public class removeConsonant {
+    public static void main(String[] args) {
+        String str="Hello, have a good day";
+        StringBuilder sb= new StringBuilder();
+        for (int i = 0; i <str.length() ; i++) {
+            if(str.charAt(i)=='a' ||str.charAt(i)=='e'||str.charAt(i)=='i' ||str.charAt(i)=='o'|| str.charAt(i)=='u'){
+                continue;
+            }else{
+                sb.append(str.charAt(i));
+            }
+        }
+        System.out.println("The new modified string is: "+ sb);
+    }
+}
